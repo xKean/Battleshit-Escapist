@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79cb9ecc0d4a6d428ab98a681a33897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeAreaShownRange: {x: -0.619524, y: 70.62574}
+  timeAreaShownRange: {x: -0.7049765, y: 79.52135}
   trackScale: 1
   playRangeEnabled: 0
   timeAreaPlayRange: {x: 3.4028235e+38, y: 3.4028235e+38}
@@ -28,7 +28,7 @@ MonoBehaviour:
     showMarkers: 1
     showInlineCurves: 0
     inlineAnimationCurveHeight: 100
-    lastInlineCurveDataID: -114926
+    lastInlineCurveDataID: 15912
     inlineCurvesState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 2ab8a3a5
@@ -53,10 +53,10 @@ MonoBehaviour:
       m_SearchString: 
     inlineCurvesShownAreaInsideMargins:
       serializedVersion: 2
-      x: 0
-      y: -127.89999
-      width: 36.87007
-      height: 237.70003
+      x: 2.1415482
+      y: -145.22507
+      width: 28.152042
+      height: 286.2102
     trackHeightExtension: 0
     m_MarkerTimeStampsKeys: 
     m_MarkerTimeStampsValues: 
@@ -64,11 +64,11 @@ MonoBehaviour:
     showMarkers: 1
     showInlineCurves: 0
     inlineAnimationCurveHeight: 193
-    lastInlineCurveDataID: 15916
+    lastInlineCurveDataID: 15910
     inlineCurvesState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e7ff3fe8
-      m_LastClickedID: -398458905
+      m_SelectedIDs: 1a654920
+      m_LastClickedID: 541680922
       m_ExpandedIDs: 00000080f662b9deffffffff6d3d142149017d26
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -89,10 +89,10 @@ MonoBehaviour:
       m_SearchString: 
     inlineCurvesShownAreaInsideMargins:
       serializedVersion: 2
-      x: 19.430693
-      y: 341.96066
-      width: 38.37378
-      height: 251.15308
+      x: 5.7511096
+      y: -170.35486
+      width: 6.0142827
+      height: 911.95087
     trackHeightExtension: 0
     m_MarkerTimeStampsKeys: 
     m_MarkerTimeStampsValues: 

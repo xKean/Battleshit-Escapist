@@ -36,8 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\AssetPacks\StarSparrow\Readme\Readme Files\Scripts\ReadmeStarSparrow.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
+     <Compile Include="Assets\AssetPacks\StarSparrow\Readme\Readme Files\Scripts\ReadmeStarSparrow.cs" />
+     <Compile Include="Assets\Scripts\CollisionHandler.cs" />
      <None Include="Assets\AssetPacks\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
      <None Include="Assets\AssetPacks\StarSparrow\UpgradeHDRP\UpgradeHDRP.txt" />
     <Reference Include="UnityEngine">
