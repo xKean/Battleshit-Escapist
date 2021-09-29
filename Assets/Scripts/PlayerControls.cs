@@ -7,15 +7,22 @@ public class PlayerControls : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] float playerXSpeedMultiplier = .15f;
-    [SerializeField] float playerYSpeedMultiplier = .12f;
-    [SerializeField] float xRange = 16f;
-    [SerializeField] float yRange = 9f;
+    [Header("General Setup settings")]
+    [Tooltip("How fast ship moves on X (left-right)")] [SerializeField] float playerXSpeedMultiplier = .15f;
+    [Tooltip("How fast ship moves on Y (up-down)")] [SerializeField] float playerYSpeedMultiplier = .12f;
+    [Tooltip("How far ship can move to corners X (left-right)")] [SerializeField] float xRange = 16f;
+    [Tooltip("How far ship can move to corners Y (up-down)")] [SerializeField] float yRange = 9f;
 
-    [SerializeField] float positionPitchFactor = -3f;
-    [SerializeField] float positionYawFactor = 2.5f;
-    [SerializeField] float controlPitchFactor = -13f;
-    [SerializeField] float controlRollFactor = -25f;
+    [Header("Lasers in here")]
+    [Tooltip("Add all player lasers here")] [SerializeField] GameObject[] lasers;
+
+    [Header("Screen position based tuning")]
+    [Tooltip("Rotation: Position Pitch * Factor")] [SerializeField] float positionPitchFactor = -3f;
+    [Tooltip("Rotation: Position Yaw * Factor")] [SerializeField] float positionYawFactor = 2.5f;
+
+    [Header("Player input based tuning")]
+    [Tooltip("Rotation: Control Pitch * Factor")] [SerializeField] float controlPitchFactor = -13f;
+    [Tooltip("Rotation: Control Roll * Factor")] [SerializeField] float controlRollFactor = -25f;
 
     float xThrow, yThrow;
     void Start()
@@ -26,13 +33,30 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
+    }
 
+    private void ProcessFiring()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            SetLasersActive(true);
+        }
+        else
+        {
+            SetLasersActive(false);
+        }
+    }
 
-
+    void SetLasersActive(bool status)
+    {
+        foreach (GameObject laser in lasers)
+        {
+            var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = status;
+        }
     }
 
     void ProcessRotation()
