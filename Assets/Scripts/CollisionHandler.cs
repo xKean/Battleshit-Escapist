@@ -1,16 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-    void OnCollisionEnter(Collision other)
+    [SerializeField] float loadDelay = 1f;
+    [SerializeField] ParticleSystem explosionParticles;
+    PlayerControls playerControls;
+    MeshRenderer playerMeshRenderer;
+    BoxCollider playerBoxCollider;
+
+
+
+    void Start()
     {
-        Debug.Log(this.name + " hit " + other.gameObject);
+        playerControls = GetComponent<PlayerControls>();
+        playerMeshRenderer = GetComponent<MeshRenderer>();
+        playerBoxCollider = GetComponent<BoxCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(this.name + " Triggered " + other.gameObject);
+        StartCrashSequence();
     }
+
+    private void StartCrashSequence()
+    {
+        playerControls.enabled = false;
+        explosionParticles.Play();
+        playerMeshRenderer.enabled = false;
+        playerBoxCollider.enabled = false;
+        Invoke("ReloadScene", loadDelay);
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

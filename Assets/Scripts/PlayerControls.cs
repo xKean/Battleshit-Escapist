@@ -24,6 +24,8 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("Rotation: Control Pitch * Factor")] [SerializeField] float controlPitchFactor = -13f;
     [Tooltip("Rotation: Control Roll * Factor")] [SerializeField] float controlRollFactor = -25f;
 
+    [Header("Damage")]
+    [Tooltip("How much dmg the player deals per shot")] [SerializeField] public int playerdamage = 15;
     float xThrow, yThrow;
     void Start()
     {
